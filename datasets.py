@@ -1,11 +1,8 @@
-# 读取数据
 import numpy as np
 from pandas.io.parsers import read_csv
 import os
 from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
-
-# dataset
 
 
 def train_dataset():
@@ -68,28 +65,6 @@ def train_generator(images, labels, batch_size):
                 y = np.array(y)
                 yield x, y
                 x, y = [], []
-
-
-def test_generator(images, batch_size):
-    """
-    测试数据生成器
-    :param images: numpy.ndarray, 图像数据, (n, 96 * 96)
-    :param batch_size:
-    :return:
-    """
-    while True:
-        count = 0
-        x = []
-        for i in range(images.shape[0]):
-            img = images[i] / 255.0
-            x.append(img)
-            count += 1
-
-            if count % batch_size == 0 and count != 0:
-                x = np.array(x)
-                x = x.reshape(batch_size, 96, 96, 1).astype("float32")
-                yield x
-                x = []
 
 
 if __name__ == '__main__':

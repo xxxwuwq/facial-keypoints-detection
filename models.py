@@ -1,5 +1,5 @@
-from keras.layers import *
-from keras.models import *
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Input
+from keras.models import Model
 
 # 定义网络结构
 def CNN_model(size):

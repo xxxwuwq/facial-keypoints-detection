@@ -1,7 +1,7 @@
 from keras.optimizers import *
 from keras.callbacks import *
 from models import CNN_model
-from datasets import train_dataset, train_generator, test_generator
+from datasets import train_dataset, train_generator
 
 
 def train():
